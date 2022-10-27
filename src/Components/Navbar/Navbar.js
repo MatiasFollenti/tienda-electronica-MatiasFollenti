@@ -1,24 +1,32 @@
 import React from "react";
-import "./Navbar.css"
-import logotipo from "../../images/logotipo.png"
-import AppleIcon from '@mui/icons-material/Apple';
-import CartWidget from "./CartWidget"
+import "./Navbar.css";
+import logotipo from "../../images/logotipo.png";
+import AppleIcon from "@mui/icons-material/Apple";
+import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
-const Navbar= ()=>{
-    return (
-        <>
-        <header>
+const Navbar = () => {
+  return (
+    <>
+      <header>
         <img src={logotipo} alt="Logo de la tienda" />
-        <h1>AccesoriosManzanita <AppleIcon/></h1>
-            <nav>
-                <a href="#">Iphones</a> 
-                <a href="#">Cargadores y Auriculares</a>
-                <a href="#">Templados y fundas</a> 
-                <a href="#">Preguntas Frecuentes</a> 
-            </nav>
-        <CartWidget/>
-        </header>
-        </>
-    )
-}
-export default Navbar
+        <Link to={'/'}>
+          <h1>
+            AccesoriosManzanita <AppleIcon />
+          </h1>
+        </Link>
+
+        <nav>
+          <Link to={"/products/celulares"}>Celulares</Link>
+          <Link to={"/products/cargadores  y auriculares"}>
+            Cargadores y Auriculares
+          </Link>
+          <Link to={"/products/Fundas y Templados"}>Fundas y Templados</Link>
+          <Link to={"/questions"}>Preguntas Frecuentes</Link>
+        </nav>
+        <CartWidget />
+      </header>
+    </>
+  );
+};
+export default Navbar;
