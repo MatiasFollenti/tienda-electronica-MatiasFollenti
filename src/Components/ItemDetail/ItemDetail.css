@@ -1,5 +1,16 @@
-/* <h1> {prod.nombre} </h1>
-<img src= {prod.URLimage} alt="" />
-<h3> {prod.descripcion} </h3>
-<h4> ${prod.precio}  </h4> */
+.containerIDetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
 
+.imgIDetail {
+ width: 50%;
+}
+
+
+.precioIDetail{
+ font-size: 1.2 rem;
+}

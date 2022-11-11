@@ -1,5 +1,8 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import "./itemCount.css";
+
+
 
 const ItemCount =({ prod })=> {
 
@@ -22,16 +25,19 @@ const ItemCount =({ prod })=> {
 
 
     return (
-        <div>
-            <button onClick={add}>+</button>
-            <h3>{count}</h3>
-            <button onClick={subtrack}>-</button>
-            <button onClick={()=>{
-                addToCart(prod,count)
+        <>
+        <div className="containerBotones">
+                <button onClick={add} className="BotonesCount">+</button>
+                <h3>{count}</h3>
+                <button onClick={subtrack} className="BotonesCount">-</button>
+        </div>
+        <button className="BotonAddToCart" onClick={()=>{
+            addToCart(prod,count)
             }} disabled={stock === 0} >
             {stock=== 0 ? <span>Sin Stock</span> :<span>Agregar al carrito</span>}
             </button>
-        </div>
+        </>
+        
 
 
 

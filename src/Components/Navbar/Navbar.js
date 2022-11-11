@@ -11,18 +11,18 @@ const Navbar = () => {
       <header>
         <img src={logotipo} alt="Logo de la tienda" />
         <Link to={'/'}>
-          <h1>
+          <h1 className="tituloNavBar">
             AccesoriosManzanita <AppleIcon />
           </h1>
         </Link>
 
         <nav>
-          <Link to={"/products/celulares"}>Celulares</Link>
-          <Link to={"/products/cargadores  y auriculares"}>
+          <Link to={"/products/celulares"} className="linksNavbar">Celulares</Link>
+          <Link to={"/products/cargadores  y auriculares"} className="linksNavbar">
             Cargadores y Auriculares
           </Link>
-          <Link to={"/products/Fundas y Templados"}>Fundas y Templados</Link>
-          <Link to={"/questions"}>Preguntas Frecuentes</Link>
+          <Link to={"/products/Fundas y Templados"} className="linksNavbar">Fundas y Templados</Link>
+          <Link to={"/questions"} className="linksNavbar" >Preguntas Frecuentes</Link>
         </nav>
         <CartWidget />
       </header>
