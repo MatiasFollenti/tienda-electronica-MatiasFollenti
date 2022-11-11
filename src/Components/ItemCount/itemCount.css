@@ -1,17 +1,27 @@
 .BotonesCount 
  {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: dodgerblue;
-  padding: 10px;
   margin: 10px;
   width: 20%;
   border-radius: 10px;
   border-style: none;
   font-weight: bold;
-  
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
 }
+
+.BotonesCount:hover, .BotonAddToCart:hover{
+  filter: brightness(120%);
+}
+
+.BotonesCount:active, .BotonAddToCart:active{
+  filter: brightness(140%);
+}
+
 .BotonAddToCart{
   background-color: dodgerblue;
   padding: 10px;
@@ -20,6 +30,8 @@
   border-radius: 10px;
   border-style: none;
   font-weight: bold;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
 }
 
 .containerBotones {

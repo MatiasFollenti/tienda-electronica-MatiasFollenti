@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import Products from '../pages/Products';
 import Questions from '../pages/Questions';
 import Detail from '../pages/Detail';
+import CartPage from '../pages/CartPage';
 
 
 const AppRouter = () => {
@@ -18,6 +19,7 @@ const AppRouter = () => {
             <Route path='/products' element={ <Products /> }>
                 <Route path=':category' element={ <Products /> }  />
             </Route>
+            <Route path='/cart' element={ <CartPage /> }/>
             <Route path='/questions' element={ <Questions  /> } />
             <Route path='/detail/:id' element={ <Detail /> } />
         </Routes>

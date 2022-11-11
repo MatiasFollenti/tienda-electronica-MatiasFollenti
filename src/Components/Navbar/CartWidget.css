@@ -1,0 +1,33 @@
+.widget-container{
+    color: #1c1c1c;
+    position: relative;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.widget-container:disabled{
+    color: #a7a7a7;
+    cursor: inherit;
+}
+
+.widget-container:disabled .widget-container__count{
+    display: none;
+}
+
+.widget-container__count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    color: white;
+    position: absolute;
+    top: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 0  ;
+    left: -6;
+}
