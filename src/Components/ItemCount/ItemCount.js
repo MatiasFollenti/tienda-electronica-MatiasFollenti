@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const ItemCount =(stock)=> {
+const ItemCount =({ prod })=> {
 
-    
+    const { stock } = prod;
+
+    const { addToCart } = useContext(CartContext);
+
     const [count, setCount] = useState(1)
 
     const add =()=>{
@@ -16,15 +20,15 @@ const ItemCount =(stock)=> {
             setCount(count - 1) 
     }}
 
-    const addToCart =()=>{console.log("Producto añadido al carrito");}
-
 
     return (
         <div>
             <button onClick={add}>+</button>
             <h3>{count}</h3>
             <button onClick={subtrack}>-</button>
-            <button onClick={addToCart} disabled={stock === 0} >
+            <button onClick={()=>{
+                addToCart(prod,count)
+            }} disabled={stock === 0} >
             {stock=== 0 ? <span>Sin Stock</span> :<span>Agregar al carrito</span>}
             </button>
         </div>
