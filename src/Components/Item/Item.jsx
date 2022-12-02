@@ -14,15 +14,15 @@ const Item = ({ prod }) => {
       <CardMedia
         component="img"
         height="140"
-        image={ prod.URLimage }
+        image={ prod.img }
         alt="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {prod.nombre}
+          {prod.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {prod.descripcion}
+          {prod.description}
         </Typography>
       </CardContent>
     </CardActionArea>

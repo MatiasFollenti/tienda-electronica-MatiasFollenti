@@ -9,10 +9,10 @@ const ItemDetail = ({ prod }) => {
 
   return (
     <div className="containerIDetail">
-      <h2 className="tituloIDetail"> {prod.nombre} </h2>
-      <img src={prod.URLimage} alt="" className="imgIDetail"/>
-      <h3 className="descripcionIDetail"> {prod.descripcion} </h3>
-      <h4 className="precioIDetail"> ${prod.precio} </h4>
+      <h2 className="tituloIDetail"> {prod.title} </h2>
+      <img src={prod.img} alt="" className="imgIDetail"/>
+      <h3 className="descripcionIDetail"> {prod.description} </h3>
+      <h4 className="precioIDetail"> ${prod.price} </h4>
       <ItemCount prod={prod} className="countIDetail"/>
     </div>
   );

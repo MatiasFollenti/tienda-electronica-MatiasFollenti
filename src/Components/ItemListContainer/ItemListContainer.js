@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getItems, getItemsByCondition } from "../../helpers/firestore.controller";
 import ItemList from "../ItemList/ItemList";
-
 
 const ItemListContainer= ({greeting})=> {
   
   
-
-    const url = 'https://run.mocky.io/v3/4f92f3f0-509f-4c69-ab7d-86d209f15c71';
 
     const { category } = useParams();
 
@@ -15,10 +13,8 @@ const ItemListContainer= ({greeting})=> {
 
     const getProducts = async () => {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        setProducts(data);
+        const response = await getItems('productos');
+        setProducts(response);
       } catch (error) {
         console.error(error);
       }
@@ -26,11 +22,8 @@ const ItemListContainer= ({greeting})=> {
 
     const getProductsByCategory = async () => {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const result = data.filter( prod => prod.categoria == category );
-        console.log(data);
-        setProducts(result);   
+        const response = await getItemsByCondition('category','==',category,'productos');
+        setProducts(response);   
       } catch (error) {
         console.error(error);
       }
@@ -44,6 +37,8 @@ const ItemListContainer= ({greeting})=> {
       }else{
         getProducts();
       }
+
+      
 
     }, [category])
     
